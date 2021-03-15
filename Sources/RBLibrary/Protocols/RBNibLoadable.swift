@@ -1,10 +1,10 @@
 import UIKit
 
-public protocol NibLoadable: class {
+public protocol RBNibLoadable: class {
   static var nib: UINib { get }
 }
 
-public extension NibLoadable {
+public extension RBNibLoadable {
   static var nib: UINib {
     return UINib(nibName: name, bundle: nil)
   }
@@ -14,7 +14,7 @@ public extension NibLoadable {
   }
 }
 
-public extension NibLoadable where Self: UIView {
+public extension RBNibLoadable where Self: UIView {
   static func loadFromNib() -> Self {
     guard let view = nib.instantiate(withOwner: nil, options: nil).first as? Self else {
       fatalError()
