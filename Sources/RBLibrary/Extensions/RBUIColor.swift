@@ -1,7 +1,7 @@
 import UIKit
 
-extension UIColor {
-  public convenience init?(hex: String) {
+public extension UIColor {
+  convenience init?(hex: String) {
     let r, g, b, a: CGFloat
     
     if hex.hasPrefix("#") {
@@ -28,7 +28,7 @@ extension UIColor {
   }
   
   
-  public convenience init(rgb: Int) {
+  convenience init(rgb: Int) {
     self.init(
       red: (rgb >> 16) & 0xFF,
       green: (rgb >> 8) & 0xFF,
@@ -36,7 +36,7 @@ extension UIColor {
     )
   }
   
-  public convenience init(red: Int, green: Int, blue: Int) {
+  convenience init(red: Int, green: Int, blue: Int) {
     self.init(red: CGFloat(red) / 255.0,
               green: CGFloat(green) / 255.0,
               blue: CGFloat(blue) / 255.0,

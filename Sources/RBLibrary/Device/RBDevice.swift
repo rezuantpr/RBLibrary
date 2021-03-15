@@ -21,7 +21,7 @@
 
 import UIKit
 
-struct RBDevice {
+public struct RBDevice {
   
   static var iphone: Bool {
     return UIDevice.current.userInterfaceIdiom == .phone

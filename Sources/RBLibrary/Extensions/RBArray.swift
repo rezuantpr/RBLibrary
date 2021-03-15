@@ -21,7 +21,7 @@
 
 import Foundation
 
-extension Array {
+public extension Array {
     
     func get(count: Int) -> Array {
         if (count < self.count) { return Array(self[0..<count]) }
@@ -29,7 +29,7 @@ extension Array {
     }
 }
 
-extension Array where Element: Equatable {
+public extension Array where Element: Equatable {
     
     mutating func removeDuplicates() {
         var result = [Element]()
@@ -40,7 +40,7 @@ extension Array where Element: Equatable {
     }
 }
 
-extension Array where Element: Hashable {
+public extension Array where Element: Hashable {
     
     func after(item: Element) -> Element? {
         if let index = self.firstIndex(of: item), index + 1 < self.count { return self[index + 1] }

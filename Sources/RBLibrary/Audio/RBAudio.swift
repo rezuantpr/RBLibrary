@@ -22,7 +22,7 @@
 import UIKit
 import AVFoundation
 
-struct RBAudio {
+public struct RBAudio {
     
     static func notStopBackgroundMusic() {
         do {

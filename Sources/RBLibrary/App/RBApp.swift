@@ -1,7 +1,7 @@
 
 import UIKit
 
-enum RBApp {
+public enum RBApp {
   
   static var udid: String? {
     return UIDevice.current.identifierForVendor?.uuidString

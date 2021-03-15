@@ -1,6 +1,6 @@
 import UIKit
 
-extension RBApp {
+public extension RBApp {
   
   enum Launch {
     

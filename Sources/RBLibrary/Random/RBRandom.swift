@@ -21,7 +21,7 @@
 
 import UIKit
 
-extension Int {
+public extension Int {
   
   static func random() -> Int {
     return Int.random(in: 0...Int.max)
@@ -32,7 +32,7 @@ extension Int {
   }
 }
 
-extension Double {
+public extension Double {
   
   static func random() -> Double {
     return Double.random(in: 0...Double.greatestFiniteMagnitude)
@@ -43,7 +43,7 @@ extension Double {
   }
 }
 
-extension Float {
+public extension Float {
   
   static func random() -> Float {
     return Float.random(in: 0...Float.greatestFiniteMagnitude)
@@ -54,7 +54,7 @@ extension Float {
   }
 }
 
-extension CGFloat {
+public extension CGFloat {
   
   static func random() -> CGFloat {
     return CGFloat.random(in: 0...CGFloat.greatestFiniteMagnitude)
@@ -65,14 +65,14 @@ extension CGFloat {
   }
 }
 
-extension Collection where Index == Int {
+public extension Collection where Index == Int {
   
   func random() -> Iterator.Element? {
     return isEmpty ? nil : self[Int(arc4random_uniform(UInt32(endIndex)))]
   }
 }
 
-extension MutableCollection where Index == Int {
+public extension MutableCollection where Index == Int {
   
   mutating func shuffleInPlace() {
     

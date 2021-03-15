@@ -22,36 +22,36 @@
 import UIKit
 import AVFoundation
 
-class RBAudioPlayer: NSObject, AVAudioPlayerDelegate {
-    
-    fileprivate var player: AVAudioPlayer = AVAudioPlayer()
-    fileprivate var endPlayingComplection: (()->())? = nil
-    
-    func play(fileName: String, complection: (()->())? = nil, volume: Float = 1) {
-        self.endPlayingComplection?()
-        self.player = AVAudioPlayer()
-        let url = Bundle.main.url(forResource: fileName, withExtension: nil)
-        if url == nil {
-            self.endPlayingComplection?()
-            return
-        }
-        do {
-            self.player = try AVAudioPlayer(contentsOf: url!)
-            player.volume = volume
-            player.delegate = self
-            player.prepareToPlay()
-            player.play()
-            self.endPlayingComplection = complection
-        } catch let error as NSError {
-            print(error.description)
-        }
+open class RBAudioPlayer: NSObject, AVAudioPlayerDelegate {
+  
+  fileprivate var player: AVAudioPlayer = AVAudioPlayer()
+  fileprivate var endPlayingComplection: (()->())? = nil
+  
+  public func play(fileName: String, complection: (()->())? = nil, volume: Float = 1) {
+    self.endPlayingComplection?()
+    self.player = AVAudioPlayer()
+    let url = Bundle.main.url(forResource: fileName, withExtension: nil)
+    if url == nil {
+      self.endPlayingComplection?()
+      return
     }
-    
-    func stop() {
-        player.stop()
+    do {
+      self.player = try AVAudioPlayer(contentsOf: url!)
+      player.volume = volume
+      player.delegate = self
+      player.prepareToPlay()
+      player.play()
+      self.endPlayingComplection = complection
+    } catch let error as NSError {
+      print(error.description)
     }
-    
-    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-        self.endPlayingComplection?()
-    }
+  }
+  
+  public func stop() {
+    player.stop()
+  }
+  
+  public func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+    self.endPlayingComplection?()
+  }
 }

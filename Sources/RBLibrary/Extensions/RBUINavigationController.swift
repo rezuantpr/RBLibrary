@@ -1,8 +1,8 @@
 import UIKit
 
-extension UINavigationController {
+public extension UINavigationController {
   
-  public func setNavigationBar(backgroundColor: UIColor,
+  func setNavigationBar(backgroundColor: UIColor,
                                tintColor: UIColor,
                                titleTextColor: UIColor,
                                titleTextFont: UIFont,
