@@ -34,12 +34,20 @@ public extension NotificationCenter {
     }
   }
   
-  func post(_ notificationName: String, userInfo: [AnyHashable: Any]?) {
-    post(name: NSNotification.Name(rawValue: notificationName), object: nil, userInfo: userInfo)
+  func post(_ notificationName: String,
+            userInfo: [AnyHashable: Any]?) {
+    post(name: NSNotification.Name(rawValue: notificationName),
+         object: nil,
+         userInfo: userInfo)
   }
   
-  func observe(observer: Any, notificationName: String, _ action: NotificationCenterTargetClosure) {
-    addObserver(observer, selector: #selector(NotificationCenter.targetAction), name: NSNotification.Name(rawValue: notificationName), object: nil)
+  func observe(observer: Any,
+               notificationName: String,
+               _ action: NotificationCenterTargetClosure) {
+    addObserver(observer,
+                selector: #selector(NotificationCenter.targetAction),
+                name: NSNotification.Name(rawValue: notificationName),
+                object: nil)
   }
   
   @objc func targetAction(_ notification: Notification) {
