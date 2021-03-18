@@ -1,6 +1,6 @@
 import Foundation
 
-class RBObservable<T> {
+public class RBObservable<T> {
   
   typealias Listener = (T) -> ()
   
@@ -17,7 +17,7 @@ class RBObservable<T> {
     listener(value)
   }
   
-  init(_ value: T) {
+  public init(_ value: T) {
     self.value = value
   }
   

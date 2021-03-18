@@ -8,7 +8,7 @@ public class RBThrottler {
   private let queue: DispatchQueue
   private let minimumDelay: TimeInterval
   
-  init(minimumDelay: TimeInterval, queue: DispatchQueue = DispatchQueue.main) {
+  public init(minimumDelay: TimeInterval, queue: DispatchQueue = DispatchQueue.main) {
     self.minimumDelay = minimumDelay
     self.queue = queue
   }
