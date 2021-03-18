@@ -13,7 +13,7 @@ public class RBThrottler {
     self.queue = queue
   }
   
-  func throttle(_ block: @escaping () -> Void) {
+  public func throttle(_ block: @escaping () -> Void) {
     workItem.cancel()
     workItem = DispatchWorkItem() {
       [weak self] in

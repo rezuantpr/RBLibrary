@@ -2,17 +2,17 @@ import Foundation
 import AVFoundation
 
 
-public class RBSpeech {
+open class RBSpeech {
   
-  let synthesizer: AVSpeechSynthesizer
+  private let synthesizer: AVSpeechSynthesizer
   
   private var muted: Bool = false
   
-  init() {
+  public init() {
     synthesizer = AVSpeechSynthesizer()
   }
   
-  func speak(_ text: String,
+  public func speak(_ text: String,
              rate: Float = 0.5,
              volume: Float = 1,
              languge: String = "en-US") {
@@ -32,16 +32,16 @@ public class RBSpeech {
     synthesizer.speak(utterance)
   }
   
-  func speak(_ text: String, with speaker: RBSpeaker) {
+  public func speak(_ text: String, with speaker: RBSpeaker) {
     speak(text, rate: speaker.rate, volume: speaker.volume, languge: speaker.language)
   }
   
-  func mute() {
+  public func mute() {
     muted = false
     synthesizer.stopSpeaking(at: .immediate)
   }
   
-  func unmute() {
+  public func unmute() {
     muted = true
   }
 }
@@ -53,7 +53,7 @@ public extension RBSpeech {
     let volume: Float
     let language: String
     
-    init(rate: Float, volume: Float, language: String) {
+    public init(rate: Float, volume: Float, language: String) {
       self.rate = rate
       self.volume = volume
       self.language = language
@@ -62,6 +62,6 @@ public extension RBSpeech {
 }
 
 public extension RBSpeech {
-  static let english1 = RBSpeaker(rate: 0.5, volume: 1, language: "en-US")
+  publicstatic let english1 = RBSpeaker(rate: 0.5, volume: 1, language: "en-US")
   static let russian1 = RBSpeaker(rate: 0.5, volume: 1, language: "ru-RU")
 }

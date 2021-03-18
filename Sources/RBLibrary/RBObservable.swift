@@ -2,7 +2,7 @@ import Foundation
 
 public class RBObservable<T> {
   
-  typealias Listener = (T) -> ()
+  public typealias Listener = (T) -> ()
   
   var listener: Listener?
   
@@ -12,7 +12,7 @@ public class RBObservable<T> {
     }
   }
   
-  func bind(_ listener: @escaping Listener) {
+  public func bind(_ listener: @escaping Listener) {
     self.listener = listener
     listener(value)
   }
@@ -21,7 +21,7 @@ public class RBObservable<T> {
     self.value = value
   }
   
-  func notify(_ value: T) {
+  public func notify(_ value: T) {
     self.value = value
   }
 }
