@@ -62,6 +62,10 @@ public extension RBSpeech {
 }
 
 public extension RBSpeech {
-  publicstatic let english1 = RBSpeaker(rate: 0.5, volume: 1, language: "en-US")
-  static let russian1 = RBSpeaker(rate: 0.5, volume: 1, language: "ru-RU")
+  static let english1 = RBSpeaker(rate: 0.5,
+                                  volume: 1,
+                                  language: "en-US")
+  static let russian1 = RBSpeaker(rate: 0.5,
+                                  volume: 1,
+                                  language: "ru-RU")
 }
