@@ -2,7 +2,7 @@ import UIKit
 
 public struct RBVibration {
   
-  static func impact(_ style: Style) {
+  public static func impact(_ style: Style) {
     
     switch style {
     case .light:
@@ -26,7 +26,7 @@ public struct RBVibration {
     }
   }
   
-  enum Style {
+  public enum Style {
     case light
     case medium
     case heavy
