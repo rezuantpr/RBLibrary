@@ -1,6 +1,11 @@
 import UIKit
+import AudioToolbox
 
 public struct RBVibration {
+  
+  public static func vibrate() {
+    AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
+  }
   
   public static func impact(_ style: Style) {
     
