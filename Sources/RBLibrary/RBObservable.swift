@@ -6,7 +6,7 @@ public class RBObservable<T> {
   
   var listener: Listener?
   
-  var value: T {
+  public var value: T {
     didSet {
       listener?(value)
     }
