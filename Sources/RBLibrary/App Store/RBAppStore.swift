@@ -3,11 +3,11 @@ import StoreKit
 
 public struct RBAppStore {
   
-  static func link(appID: String) -> String {
+  public static func link(appID: String) -> String {
     return "https://itunes.apple.com/app/id" + appID
   }
   
-  static func open(app id: String) {
+  public static func open(app id: String) {
     if let url = URL(string: "itms-apps://itunes.apple.com/app/id\(id)"),
        UIApplication.shared.canOpenURL(url) {
       if #available(iOS 10.0, *) {
@@ -18,7 +18,7 @@ public struct RBAppStore {
     }
   }
   
-  static func requestReview(appID: String, force: Bool) {
+  public static func requestReview(appID: String, force: Bool) {
     if force {
       if let url = URL(string: "itms-apps://itunes.apple.com/us/app/apple-store/id\(appID)?mt=8&action=write-review"),
          UIApplication.shared.canOpenURL(url) {

@@ -2,9 +2,9 @@ import UIKit
 
 public extension RBApp {
   
-  enum Launch {
+  public enum Launch {
     
-    static func run() {
+    public static func run() {
       self.count += 1
       if (UserDefaults.standard.object(forKey: "RBDateFirstLaunch") as? Date) == nil {
         UserDefaults.standard.set(Date(), forKey: "RBDateFirstLaunch")
@@ -12,30 +12,30 @@ public extension RBApp {
       
     }
     
-    static var count: Int {
+    public static var count: Int {
       get { return UserDefaults.standard.value(forKey: "RBLaunchCount") as? Int ?? 0 }
       set { UserDefaults.standard.set(newValue, forKey: "RBLaunchCount") }
     }
     
-    static var isFirstLaunch: Bool {
+    public static var isFirstLaunch: Bool {
       return (self.count == 0)
     }
     
-    static var dateFirstLaunch: Date {
+    public static var dateFirstLaunch: Date {
       return ((UserDefaults.standard.object(forKey: "RBDateFirstLaunch") as? Date) ?? Date())
     }
     
     
     //
-    static var notUpdated: Bool {
+    public static var notUpdated: Bool {
       return (UserDefaults.standard.object(forKey: "RBDateLastUpdateLaunch") as? Date) == nil
     }
     
-    static var dateLastUpdate: Date {
+    public static var dateLastUpdate: Date {
       return ((UserDefaults.standard.object(forKey: "RBDateLastUpdateLaunch") as? Date) ?? Date())
     }
     
-    static func update() {
+    public static func update() {
       UserDefaults.standard.set(Date(), forKey: "RBDateLastUpdateLaunch")
     }
   }

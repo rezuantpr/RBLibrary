@@ -2,9 +2,9 @@ import UIKit
 
 public extension RBApp {
   
-  struct Badge {
+  public struct Badge {
 
-    static var number: Int {
+    public  static var number: Int {
       get {
         return UIApplication.shared.applicationIconBadgeNumber
       }
@@ -13,7 +13,7 @@ public extension RBApp {
       }
     }
     
-    static func reset() {
+    public static func reset() {
       UIApplication.shared.applicationIconBadgeNumber = 0
     }
     
