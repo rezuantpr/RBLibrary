@@ -10,6 +10,7 @@ final class RBLibraryTests: XCTestCase {
     XCTAssertEqual(1.asDouble, 1.0)
     XCTAssertEqual(1.0.asInt, 1)
     XCTAssertEqual(Optional("str").unwrap, "str")
+    
   }
   
   static var allTests = [
