@@ -4,7 +4,7 @@ open class RBObservable<T> {
   
   public typealias Listener = (T) -> ()
   
-  var listener: Listener?
+  open var listener: Listener?
   
   open var value: T {
     didSet {
